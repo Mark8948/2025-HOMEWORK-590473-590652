@@ -1,6 +1,6 @@
+package it.uniroma3.diadia.ambienti;
 
-
-
+import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
  * Classe Stanza - una stanza in un gioco di ruolo.
@@ -128,7 +128,7 @@ public class Stanza {
     			risultato.append(" " + direzione);
     	risultato.append("\nAttrezzi nella stanza: ");
     	for (Attrezzo attrezzo : this.attrezzi) {
-    		risultato.append(attrezzo.toString()+" ");
+    		if(attrezzo!=null) risultato.append(attrezzo.toString()+" ");
     	}
     	return risultato.toString();
     }
@@ -153,11 +153,13 @@ public class Stanza {
 	 * @return l'attrezzo presente nella stanza.
      * 		   null se l'attrezzo non e' presente.
 	 */
-	public Attrezzo getAttrezzo(String nomeAttrezzo) {
+	public Attrezzo getAttrezzo(String nomeAttrezzo) {		
+		if(this.attrezzi==null) return null;
+		
 		Attrezzo attrezzoCercato;
 		attrezzoCercato = null;
 		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo.getNome().equals(nomeAttrezzo))
+			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
 				attrezzoCercato = attrezzo;
 		}
 		return attrezzoCercato;	

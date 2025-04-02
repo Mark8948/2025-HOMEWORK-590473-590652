@@ -3,6 +3,9 @@ package it.uniroma3.diadia;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
+import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.attrezzi.Attrezzo;
+
 class StanzaTest {
 
     private Stanza stanza;

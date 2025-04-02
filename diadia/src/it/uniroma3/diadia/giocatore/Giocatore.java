@@ -1,8 +1,14 @@
+package it.uniroma3.diadia.giocatore;
+import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.attrezzi.Attrezzo;
+
 /**
  * La classe Giocatore modella il giocatore del gioco, gestendo i CFU e la Borsa degli attrezzi.
  */
 public class Giocatore {
     
+	private int CFU_INIZIALI = 20;
+	
     private int cfu; // Crediti Formativi Universitari (energia del giocatore)
     private Borsa borsa; // Inventario del giocatore
     
@@ -10,7 +16,7 @@ public class Giocatore {
      * Costruttore del Giocatore con CFU iniziali.
      */
     public Giocatore() {
-        this.cfu = 20; // Valore predefinito dei CFU iniziali
+        this.cfu = CFU_INIZIALI; // Valore predefinito dei CFU inizia
         this.borsa = new Borsa(); // Istanza della borsa
     }
     
