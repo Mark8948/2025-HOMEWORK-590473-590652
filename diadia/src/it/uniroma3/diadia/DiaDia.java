@@ -1,6 +1,6 @@
 package it.uniroma3.diadia;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
@@ -19,7 +19,7 @@ import it.uniroma3.diadia.giocatore.Giocatore;
 
 public class DiaDia {
 
-	IOConsole interazione = new IOConsole();
+	//IOConsole interazione = new IOConsole(); sostituito dalle interfacce nell'HW2
 
 	static final private String MESSAGGIO_BENVENUTO = ""
 			+ "Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n"
@@ -31,12 +31,14 @@ public class DiaDia {
 			+ "Per conoscere le istruzioni usa il comando 'aiuto'.";
 
 	static final private String[] elencoComandi = { "vai", "aiuto", "fine", "prendi", "posa" };
-
+    
+	private IO interazione;
 	private Partita partita;
 
-	public DiaDia() {
-		this.partita = new Partita();
-	}
+	public DiaDia(IO interazione) {
+        this.interazione = interazione;
+        this.partita = new Partita();
+    }
 
 	public void gioca() {
 		String istruzione;
@@ -161,7 +163,8 @@ public class DiaDia {
 	}
 
 	public static void main(String[] argc) {
-		DiaDia gioco = new DiaDia();
+		IO io = new IOConsole();
+		DiaDia gioco = new DiaDia(io);
 		gioco.gioca();
 	}
 }
