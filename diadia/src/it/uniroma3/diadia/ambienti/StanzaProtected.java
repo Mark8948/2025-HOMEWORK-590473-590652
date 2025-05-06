@@ -17,7 +17,7 @@ public class StanzaProtected {
     protected int numeroStanzeAdiacenti;
     protected String[] direzioni;
 
-    public StanzaProtected(String nome) {
+    protected StanzaProtected(String nome) {
         this.nome = nome;
         this.numeroStanzeAdiacenti = 0;
         this.numeroAttrezzi = 0;
