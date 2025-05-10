@@ -1,4 +1,4 @@
-package it.uniroma3.diadia;
+package it.uniroma3.diadia.comandi;
 
 import java.util.Scanner;
 
@@ -14,12 +14,12 @@ import java.util.Scanner;
  * @version base
  */
 
-public class Comando {
+public class ComandoClasse {
 
     private String nome;
     private String parametro;
 
-    public Comando(String istruzione) {
+    public ComandoClasse(String istruzione) {
 		Scanner scannerDiParole = new Scanner(istruzione);
 
 		// prima parola: nome del comando
